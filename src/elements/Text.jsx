@@ -44,8 +44,6 @@ const Text = (props) => {
     classes,
     className: classNameProp,
     color='inherit',
-    dark,
-    light,
     noMargin,
     caption,
     body,
@@ -60,6 +58,7 @@ const Text = (props) => {
     variant
   } = props
   /* eslint-enable */
+
   // variantKey - the value the user passed in for body, h1, etc
   const variantKey = getVariantKey(props)
 
@@ -78,15 +77,16 @@ const Text = (props) => {
     classes.imgFluid,
     classNameProp,
     classes[variantValue],
-
     {
       [classes.marginBottom]: !noMargin,
       [classes.left]: align === 'left',
       [classes.center]: align === 'center',
       [classes.noMargin]: noMargin,
+
     },
 
   ])
+
   const Component = variantValue
 
   return (
@@ -99,17 +99,12 @@ const Text = (props) => {
   )
 }
 
-
-
 const styles = theme => {
 
   const xs = theme.typography.xs
   const md = theme.typography.md
 
   return ({
-    fontColor: props => ({
-      color: 'orange' // getColorValue(theme, props.color)
-    }),
     marginBottom: {
       marginBottom: '1em !important',
     },
@@ -151,14 +146,5 @@ export default compose(
 )(Text)
 
 Text.propTypes = {
-  variant: PropTypes.oneOf([
-    'h1',
-    'h2',
-    'h3',
-    'h4',
-    'subtitle1',
-    'subtitle2',
-    'subtitle3',
-    'body'
-  ]),
+  variant: PropTypes.oneOf(variants)
 }

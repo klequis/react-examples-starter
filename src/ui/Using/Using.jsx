@@ -5,12 +5,10 @@ import Text from 'elements/Text'
 import A from 'elements/A'
 import Pre from 'elements/Pre'
 
-const startUsing = `
-$ git clone https://github.com/klequis/react-examples-starter.git
+const startUsing = `$ git clone https://github.com/klequis/react-examples-starter.git
 $ cd react-examples-starter
 $ yarn
-$ yarn start
-`
+$ yarn start`
 
 const Using = (props) => {
   return (
